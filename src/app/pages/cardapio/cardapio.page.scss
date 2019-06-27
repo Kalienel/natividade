@@ -1,21 +1,29 @@
 ion-avatar {
     width:100% !important;  
     height : 100% !important;  
-    max-width: 100px !important;
-    max-height: 100px !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
 }
 
 .produto {
-    bottom:30px;
-    left:20px;
-    font-size:20px;
+    font-size:25px;
 }
 
 .ingredientes {
     right:50px;
 }
 
-.preço {
-    position:absolute;
-    left:50000000px;
+.preco {
+    float:right;
+    bottom:50%;
+}
+
+.detalhes {
+    position:relative;
+    width:100%;
+}
+
+.compra {
+    float:center;
+    color:green;
 }
