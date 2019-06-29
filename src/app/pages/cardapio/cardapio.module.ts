@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { CardapioPage } from './cardapio.page';
 
+import { CompraComponent } from '../../components/compra/compra.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,8 +21,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
-  declarations: [CardapioPage]
+  declarations: [CardapioPage, CompraComponent]
 })
 export class CardapioPageModule {}

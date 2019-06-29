@@ -2,29 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-cardapio',
-  templateUrl: './cardapio.page.html',
-  styleUrls: ['./cardapio.page.scss'],
+  selector: 'app-compra',
+  templateUrl: './compra.component.html',
+  styleUrls: ['./compra.component.scss'],
 })
-export class CardapioPage implements OnInit {
+export class CompraComponent implements OnInit {
 
   constructor(public alertController: AlertController) { }
 
-  click() {
-    console.log('Carai funcionou asufhuashdua');
-  }
+  ngOnInit() {}
 
   async alerta() {
     const alert = await this.alertController.create({
       header: 'Atenção',
       subHeader: 'Confirmar pedido',
-      buttons: ['Realizar Compra', 'Voltar']
+      buttons: ['Realizar Compra']
     });
 
     await alert.present();
-  }
-
-  ngOnInit() {
   }
 
 }

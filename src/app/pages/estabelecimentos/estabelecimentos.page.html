@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>estabelecimentos</ion-title>
+    <ion-title>Locais Próximos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-item [routerLink]="['/cardapio']" class="item">
+    <div class="img">
+      <img src="../../../assets/images/quiosque1.jpg">
+    </div>
+    <div class="detalhes">
+      <ion-label text-wrap class="nome">Quiosque 1</ion-label>
+      <ion-label text-wrap class="tipo">Petiscos de Praia</ion-label>
+    </div>
+    <div class="avancar">
+      <ion-label class="dist">12 m</ion-label>
+    </div>
+  </ion-item>
 
 </ion-content>
