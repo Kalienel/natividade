@@ -1,21 +1,21 @@
 ion-avatar {
     width:100% !important;  
     height : 100% !important;  
-    max-width: 100px !important;
-    max-height: 100px !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
 }
 
-.nome {
+.produto {
     font-size:25px;
 }
 
-.tipo {
+.ingredientes {
     right:50px;
 }
 
-.dist {
-    /*float:right;
-    bottom:50%; */
+.preco {
+    float:right;
+    bottom:50%;
 }
 
 .detalhes {
@@ -23,11 +23,7 @@ ion-avatar {
     width:100%;
 }
 
-.avancar {
+.compra {
     float:center;
-}
-
-.icon {
-    float:right;
-    bottom:50%;
+    color:green;
 }

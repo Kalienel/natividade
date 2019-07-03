@@ -5,17 +5,18 @@
 </ion-header>
 
 <ion-content>
-
   <ion-item [routerLink]="['/cardapio']" class="item">
-    <div class="img">
-      <img src="../../../assets/images/quiosque1.jpg">
-    </div>
+      <ion-avatar slot="start">
+        <img src="../../../assets/images/quiosque1.jpg">
+      </ion-avatar>
     <div class="detalhes">
       <ion-label text-wrap class="nome">Quiosque 1</ion-label>
       <ion-label text-wrap class="tipo">Petiscos de Praia</ion-label>
+      <ion-label text-wrap class="dist">12 m</ion-label>
     </div>
-    <div class="avancar">
-      <ion-label class="dist">12 m</ion-label>
+    <div style="white-space: nowrap" class="avancar">
+      <ion-icon class="icon" style="color:black;margin-left:2px" name="star"></ion-icon>
+      <p>4,5</p>
     </div>
   </ion-item>
 

@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>QUIOSQUE 1</ion-title>
+    <ion-title>Carrinho</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item (click)="alerta()" class="item">
+  <ion-item class="item">
     <ion-avatar slot="start">
       <img src="../../../assets/images/batata.jpg">
     </ion-avatar>
@@ -15,13 +15,10 @@
     </div>
     <div class="compra">
       <ion-label class="preco">R$12,00</ion-label>
+      <ion-button shape="round">Remover item</ion-button>
     </div>
   </ion-item>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button [routerLink]="['/carrinho']">
-        <ion-icon name="cart"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  <ion-button style="margin-top:45px" (click)="alerta()" expand="block">Comprar</ion-button>
 
 </ion-content>

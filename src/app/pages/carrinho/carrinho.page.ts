@@ -4,18 +4,22 @@ import { ConfirmadaPage } from '../confirmada/confirmada.page';
 import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-cardapio',
-  templateUrl: './cardapio.page.html',
-  styleUrls: ['./cardapio.page.scss'],
+  selector: 'app-carrinho',
+  templateUrl: './carrinho.page.html',
+  styleUrls: ['./carrinho.page.scss'],
 })
-export class CardapioPage implements OnInit {
+export class CarrinhoPage implements OnInit {
 
   constructor(private navCtrl: NavController, public alertController: AlertController) { }
 
+  click() {
+    console.log('Carai funcionou asufhuashdua');
+  }
+
   async alerta() {
     const alert = await this.alertController.create({
-      header: 'Compra',
-      subHeader: 'Deseja adicionar esse produto ao carrinho?',
+      header: 'Deseja comprar esse produto?',
+      subHeader: 'Seu cartão Visa final 3957 será utilizado',
       buttons: [
         {
           text: 'Não',
@@ -26,6 +30,7 @@ export class CardapioPage implements OnInit {
         }, {
           text: 'Sim',
           handler: () => {
+            this.navCtrl.navigateRoot('/confirmada');
             console.log('Compra realizada');
           }
         }
