@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: 'cardapio', loadChildren: './pages/cardapio/cardapio.module#CardapioPageModule' },
   { path: 'comprar', loadChildren: './pages/comprar/comprar.module#ComprarPageModule' },
   { path: 'confirmada', loadChildren: './pages/confirmada/confirmada.module#ConfirmadaPageModule' },
-  { path: 'carrinho', loadChildren: './pages/carrinho/carrinho.module#CarrinhoPageModule' }
+  { path: 'carrinho', loadChildren: './pages/carrinho/carrinho.module#CarrinhoPageModule' },
+  { path: 'investimento', loadChildren: './pages/investimento/investimento.module#InvestimentoPageModule' }
 ];
 @NgModule({
   imports: [

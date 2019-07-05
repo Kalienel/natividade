@@ -1,0 +1,130 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center;">Investimentos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="../../../assets/images/bovespa.png" />
+    <ion-card-header>
+      <ion-card-title>Bovespa</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Foi possível notar um aumento na bolsa de valores brasileira, é recomendado segurar um pouco o dinheiro
+    </ion-card-content>
+  </ion-card>
+  <ion-title style="padding-top:10px;padding-bottom: 10px">Maiores Altas</ion-title>
+  <ion-item (click)="alerta()" class="item">
+      <div class="ação">
+        <ion-label text-wrap class="empresa">GOL</ion-label>
+      </div>
+      <div class="valor">
+        <ion-label class="preco">R$40.40</ion-label>
+      </div>
+      <div class="mudança">
+          <ion-label class="alteracao"> <ion-icon color="green" class="seta" name="arrow-dropup"></ion-icon>+2.37  (+6.23%)</ion-label>
+      </div>
+    </ion-item>
+    <ion-item (click)="alerta()" class="item">
+        <div class="ação">
+          <ion-label text-wrap class="empresa">B2W</ion-label>
+        </div>
+        <div class="valor">
+          <ion-label class="preco">R$35.78</ion-label>
+        </div>
+        <div class="mudança">
+            <ion-label class="alteracao"> <ion-icon color="green" class="seta" name="arrow-dropup"></ion-icon>+1.50  (+4.38%)</ion-label>
+        </div>
+      </ion-item>
+      <ion-item (click)="alerta()" class="item">
+          <div class="ação">
+            <ion-label text-wrap class="empresa">AZUL</ion-label>
+          </div>
+          <div class="valor">
+            <ion-label class="preco">R$48.45</ion-label>
+          </div>
+          <div class="mudança">
+              <ion-label class="alteracao"> <ion-icon color="green" class="seta" name="arrow-dropup"></ion-icon>+1.70  (+3.64%)</ion-label>
+          </div>
+        </ion-item>
+        <ion-item (click)="alerta()" class="item">
+            <div class="ação">
+              <ion-label text-wrap class="empresa">SUZANO</ion-label>
+            </div>
+            <div class="valor">
+              <ion-label class="preco">R$32.70</ion-label>
+            </div>
+            <div class="mudança">
+                <ion-label class="alteracao"> <ion-icon color="green" class="seta" name="arrow-dropup"></ion-icon>+0.95  (+2.99%)</ion-label>
+            </div>
+          </ion-item>
+          <ion-item (click)="alerta()" class="item">
+              <div class="ação">
+                <ion-label text-wrap class="empresa">FLEURY</ion-label>
+              </div>
+              <div class="valor">
+                <ion-label class="preco">R$22.72</ion-label>
+              </div>
+              <div class="mudança">
+                  <ion-label class="alteracao"> <ion-icon color="green" class="seta" name="arrow-dropup"></ion-icon>+0.72  (+3.27%)</ion-label>
+              </div>
+            </ion-item>
+  <ion-title style="padding-top:10px;padding-bottom: 10px">Maiores Baixas</ion-title>
+  <ion-item (click)="alerta()" class="item">
+      <div class="ação">
+        <ion-label text-wrap class="empresa">VALE</ion-label>
+      </div>
+      <div class="valor">
+        <ion-label class="preco">R$50.36</ion-label>
+      </div>
+      <div class="mudança">
+          <ion-label class="alteracao"> <ion-icon color="red" class="setad" name="arrow-dropdown"></ion-icon>-1.31  (-2.54%)</ion-label>
+      </div>
+    </ion-item>
+    <ion-item (click)="alerta()" class="item">
+        <div class="ação">
+          <ion-label text-wrap class="empresa">BRADESPAR</ion-label>
+        </div>
+        <div class="valor">
+          <ion-label class="preco">R$31.54</ion-label>
+        </div>
+        <div class="mudança">
+            <ion-label class="alteracao"> <ion-icon color="red" class="setad" name="arrow-dropdown"></ion-icon>-0.89  (-2.74%)</ion-label>
+        </div>
+      </ion-item>
+      <ion-item (click)="alerta()" class="item">
+          <div class="ação">
+            <ion-label text-wrap class="empresa">CIELO</ion-label>
+          </div>
+          <div class="valor">
+            <ion-label class="preco">R$6.87</ion-label>
+          </div>
+          <div class="mudança">
+              <ion-label class="alteracao"> <ion-icon color="red" class="setad" name="arrow-dropdown"></ion-icon>-0.13  (-1.86%)</ion-label>
+          </div>
+        </ion-item>
+        <ion-item (click)="alerta()" class="item">
+            <div class="ação">
+              <ion-label text-wrap class="empresa">SID</ion-label>
+            </div>
+            <div class="valor">
+              <ion-label class="preco">R$16.70</ion-label>
+            </div>
+            <div class="mudança">
+                <ion-label class="alteracao"> <ion-icon color="red" class="setad" name="arrow-dropdown"></ion-icon>-0.22  (-1.30%)</ion-label>
+            </div>
+          </ion-item>
+          <ion-item (click)="alerta()" class="item">
+              <div class="ação">
+                <ion-label text-wrap class="empresa">NATURA</ion-label>
+              </div>
+              <div class="valor">
+                <ion-label class="preco">R$57.61</ion-label>
+              </div>
+              <div class="mudança">
+                  <ion-label class="alteracao"> <ion-icon color="red" class="setad" name="arrow-dropdown"></ion-icon>-0.89  (-1.52%)</ion-label>
+              </div>
+            </ion-item>
+
+</ion-content>

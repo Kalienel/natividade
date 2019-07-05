@@ -1,0 +1,56 @@
+/*.produto {
+    font-size:25px;
+}
+
+.ingredientes {
+    right:50px;
+}
+
+.preco {
+    float:right;
+    bottom:50%;
+}
+
+.detalhes {
+    position:relative;
+    width:100%;
+}
+
+.compra {
+    float:center;
+    color:green;
+}*/
+
+.ação {
+    max-width: 25%;
+    flex:0 0 25%;
+}
+
+.valor {
+    max-width: 25%;
+    flex:0 0 25%;
+}
+
+.mudança {
+    max-width: 50%;
+    flex:0 0 50%;
+    white-space: nowrap;
+    float: right;
+}
+
+.seta {
+    white-space: nowrap;
+    text-align: right;
+    color:green;
+}
+
+.setad {
+    white-space: nowrap;
+    text-align: right;
+    color:red;
+}
+
+.alteracao {
+    float: right;
+}
+
