@@ -8,18 +8,18 @@
   <ion-item style="margin-bottom:10px">
       <ion-icon name="search" item-left></ion-icon><ion-input type="search" placeholder="Prato ou Restaurante" class="pesquisa"></ion-input>
   </ion-item>
-  <ion-item [routerLink]="['/cardapio']" class="item">
+  <ion-item *ngFor="let item of restaurantes" (click)="verCardapio(item)" [routerLink]="['/cardapio']" class="item">
       <ion-avatar slot="start">
         <img src="../../../assets/images/quiosque1.jpg">
       </ion-avatar>
     <div class="detalhes">
-      <ion-label text-wrap class="nome">Quiosque 1</ion-label>
-      <ion-label text-wrap class="tipo">Petiscos de Praia</ion-label>
-      <ion-label text-wrap class="dist">12 m</ion-label>
+      <ion-label text-wrap class="nome">{{item.Nome}}</ion-label>
+      <ion-label text-wrap class="tipo">{{item.Tipo}}</ion-label>
+      <ion-label text-wrap class="dist">{{item.Dist}} m</ion-label>
     </div>
     <div style="white-space: nowrap" class="avancar">
       <ion-icon class="icon" style="color:#eded07; margin-left:2px" name="star"></ion-icon>
-      <p style="color:#eded07">4,5</p>
+      <p style="color:#eded07">{{item.Estrelas}}</p>
     </div>
   </ion-item>
 
