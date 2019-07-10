@@ -15,7 +15,8 @@ export class EstabelecimentosPage implements OnInit {
 
   restaurantes: any;
   cardapio: any;
-  item: string;
+  item: object;
+  
 ;
  
   constructor(private crudService: CrudService, private router: Router) {
@@ -35,13 +36,13 @@ export class EstabelecimentosPage implements OnInit {
         };
       })
       console.log(this.restaurantes);
- 
+
     });
   }
-  verCardapio() {
-    this.item = "alo";
-    this.router.navigateByUrl('cardapio/' + this.item);
-    console.log(this.item);
+  verCardapio(item) {
+    /*this.item = "alo";*/
+    this.router.navigateByUrl('cardapio/' + item.id);
+    /*console.log(this.item);*/
   }
- 
+
 }
