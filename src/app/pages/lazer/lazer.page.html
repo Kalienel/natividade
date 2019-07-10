@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center">Lazer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item (click)=alerta() class="item">
+      <ion-avatar slot="start">
+        <img src="../../../assets/images/cinema.jpeg">
+      </ion-avatar>
+    <div class="detalhes">
+      <ion-label text-wrap class="nome">Cinema</ion-label>
+      <ion-label text-wrap class="tipo">Vingadores: Ultimato</ion-label>
+      <ion-label text-wrap class="dist">42 m</ion-label>
+    </div>
+    <div style="white-space: nowrap" class="avancar">
+      <ion-icon class="icon" style="color:black;margin-left:2px" name="star"></ion-icon>
+      <p>4,1</p>
+    </div>
+  </ion-item>
+
+  <ion-item (click)=alerta() class="item">
+      <ion-avatar slot="start">
+        <img src="../../../assets/images/cinema.jpeg">
+      </ion-avatar>
+    <div class="detalhes">
+      <ion-label text-wrap class="nome">Cinema</ion-label>
+      <ion-label text-wrap class="tipo">Vingadores: Ultimato</ion-label>
+      <ion-label text-wrap class="dist">42 m</ion-label>
+    </div>
+    <div style="white-space: nowrap" class="avancar">
+      <ion-icon class="icon" style="color:black;margin-left:2px" name="star"></ion-icon>
+      <p>4,1</p>
+    </div>
+  </ion-item>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/lazer']" tab="tab1">
+        <ion-icon name="videocam"></ion-icon>
+        <ion-label>Lazer</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/investimento']" tab="tab2">
+        <ion-icon name="cash"></ion-icon>
+        <ion-label>Investimentos</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/estabelecimentos']" tab="tab3">
+        <ion-icon name="umbrella"></ion-icon>
+        <ion-label>Lugares Próximos</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  
+</ion-content>

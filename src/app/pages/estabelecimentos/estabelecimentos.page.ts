@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../../crud.service';
 import { IterableChangeRecord_ } from '@angular/core/src/change_detection/differs/default_iterable_differ';
+import { NavController } from '@ionic/angular';
+import { CardapioPage } from '../cardapio/cardapio.page';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-estabelecimentos',
@@ -10,8 +14,12 @@ import { IterableChangeRecord_ } from '@angular/core/src/change_detection/differ
 export class EstabelecimentosPage implements OnInit {
 
   restaurantes: any;
+  cardapio: any;
+  item: string;
+;
  
-  constructor(private crudService: CrudService) {}
+  constructor(private crudService: CrudService, private router: Router) {
+  }
  
   ngOnInit() {
     this.crudService.read_Restaurante().subscribe(data => {
@@ -19,7 +27,6 @@ export class EstabelecimentosPage implements OnInit {
       this.restaurantes = data.map(e => {
         return {
           id: e.payload.doc.id,
-          isEdit: false,
           Estrelas: e.payload.doc.data()['Estrelas'],
           Nome: e.payload.doc.data()['Nome'],
           Tipo: e.payload.doc.data()['Tipo'],
@@ -31,12 +38,10 @@ export class EstabelecimentosPage implements OnInit {
  
     });
   }
-  verCardapio(item) {
-    item.CardapioNome = item.Nome;
-    item.CardapioTipo = item.Tipo;
-    item.CardapioEstrelas = item.Estrelas;
-    item.CardapioDesc = item.Desc;
-    console.log(item.CardapioNome)
+  verCardapio() {
+    this.item = "alo";
+    this.router.navigateByUrl('cardapio/' + this.item);
+    console.log(this.item);
   }
  
 }

@@ -1,24 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { ConfirmadaPage } from '../confirmada/confirmada.page';
 import { NavController } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-cardapio',
-  templateUrl: './cardapio.page.html',
-  styleUrls: ['./cardapio.page.scss'],
+  selector: 'app-lazer',
+  templateUrl: './lazer.page.html',
+  styleUrls: ['./lazer.page.scss'],
 })
-export class CardapioPage implements OnInit {
+export class LazerPage implements OnInit {
 
-  item: any;
-
-  constructor(private navCtrl: NavController, public alertController: AlertController, private route: ActivatedRoute) { }
+  constructor(private navCtrl: NavController, public alertController: AlertController) { }
 
   async alerta() {
     const alert = await this.alertController.create({
-      header: 'Compra',
-      subHeader: 'Deseja adicionar esse produto ao carrinho?',
+      header: 'Esse é um alerta reserva',
+      subHeader: 'Use caso o escopo normal mude',
       buttons: [
         {
           text: 'Não',
@@ -29,6 +25,7 @@ export class CardapioPage implements OnInit {
         }, {
           text: 'Sim',
           handler: () => {
+            this.navCtrl.navigateRoot('/confirmada');
             console.log('Compra realizada');
           }
         }
@@ -39,7 +36,6 @@ export class CardapioPage implements OnInit {
   }
 
   ngOnInit() {
-    this.item = this.route.snapshot.paramMap.get('item');
   }
 
 }
