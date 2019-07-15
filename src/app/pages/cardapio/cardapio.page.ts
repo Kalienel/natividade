@@ -26,6 +26,7 @@ export class CardapioPage implements OnInit {
   dist: any;
   tipo: any;
   estab: any;
+  teste: any;
 
 // tslint:disable-next-line: max-line-length
   constructor(private db: AngularFirestore, private navCtrl: NavController, public alertController: AlertController, private route: ActivatedRoute, private fireStore: AngularFirestore) {
@@ -36,14 +37,14 @@ export class CardapioPage implements OnInit {
     console.log(this.estab); */
     this.item = this.route.snapshot.paramMap.get('item');
     const docRef = this.db.collection('restaurantes').doc(this.item);
-    docRef.ref.get().then(function(doc) {
-      if (doc.exists) {
-        let dados = doc.data();
-        let nome = dados['Nome'];
-        console.log(nome);
-      }
+    this.teste = docRef.ref.get().then(function(doc) {
+      return {
+        teste1: doc.data()['Nome'],
+        teste2: doc.data()['Tipo']
+        };
+      });
+    console.log(this.teste);
     }
-    )};
 
   async alerta() {
     const alert = await this.alertController.create({
