@@ -28,7 +28,7 @@ export class CardapioPage implements OnInit {
   estab: any;
 
 // tslint:disable-next-line: max-line-length
-  constructor(private db: AngularFirestore, private navCtrl: NavController, public alertController: AlertController, private route: ActivatedRoute, private fireStore: AngularFirestore) { 
+  constructor(private db: AngularFirestore, private navCtrl: NavController, public alertController: AlertController, private route: ActivatedRoute, private fireStore: AngularFirestore) {
     /*this.item = this.route.snapshot.paramMap.get('item');
     /*const docRef = this.db.collection('restaurantes').doc(this.item);
     this.estab = db.doc<any>('restaurantes/quiosque2');
