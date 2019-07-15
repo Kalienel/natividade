@@ -8,8 +8,8 @@
   <ion-card>
       <img src="../../../assets/images/quiosque1.jpg" />
       <ion-card-header>
-        <ion-card-subtitle>Petiscos de Praia</ion-card-subtitle>
-        <ion-card-title>{{nome}}</ion-card-title>
+        <ion-card-subtitle>Petiscos de Praia {{ tipo }}</ion-card-subtitle>
+        <ion-card-title>{{ dados | json }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         Comidas de praia tradicionais, com o doce sabor da brisa do mar, acompanhado da sua bebida favorita.
