@@ -18,12 +18,9 @@ import { Injectable } from '@angular/core';
 export class CardapioPage implements OnInit {
 
   item: any;
-  info: any;
-  dados: any;
   nome: any;
   desc: any;
-  estrelas: any;
-  dist: any;
+  capa: any;
   tipo: any;
   estab: any;
 
@@ -67,12 +64,14 @@ export class CardapioPage implements OnInit {
         return {
           nome: doc.data()['Nome'],
           tipo: doc.data()['Tipo'],
-          desc: doc.data()['Desc']
+          desc: doc.data()['Desc'],
+          capa: doc.data()['Capa'],
           };
         });
       this.nome = obj.nome;
       this.tipo = obj.tipo;
       this.desc = obj.desc;
+      this.capa = obj.capa;
     }
     catch(e) { console.log(e) }
   }
