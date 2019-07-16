@@ -26,24 +26,9 @@ export class CardapioPage implements OnInit {
   dist: any;
   tipo: any;
   estab: any;
-  teste: any;
 
 // tslint:disable-next-line: max-line-length
   constructor(private db: AngularFirestore, private navCtrl: NavController, public alertController: AlertController, private route: ActivatedRoute, private fireStore: AngularFirestore) {
-    /*this.item = this.route.snapshot.paramMap.get('item');
-    /*const docRef = this.db.collection('restaurantes').doc(this.item);
-    this.estab = db.doc<any>('restaurantes/quiosque2');
-    this.nome = this.estab['Nome'];
-    console.log(this.estab); */
-    this.item = this.route.snapshot.paramMap.get('item');
-    const docRef = this.db.collection('restaurantes').doc(this.item);
-    this.teste = docRef.ref.get().then(function(doc) {
-      return {
-        teste1: doc.data()['Nome'],
-        teste2: doc.data()['Tipo']
-        };
-      });
-    console.log(this.teste);
     }
 
   async alerta() {
@@ -71,21 +56,25 @@ export class CardapioPage implements OnInit {
 
 
   ngOnInit() {
-    /*this.item = this.route.snapshot.paramMap.get('item');
+    this.item = this.route.snapshot.paramMap.get('item');
     const docRef = this.db.collection('restaurantes').doc(this.item);
-    docRef.get().subscribe(function(doc) {
-      if (doc.exists) {
-        let dados = doc.data();
-        let nome = dados['Nome'];
-        let desc = dados['Desc'];
-        let tipo = dados['Tipo'];
-        let estrelas = dados['Estrelas'];
-        let dist = dados['Dist'];
-        console.log(nome);
+    this.getStorage(docRef)
+  }
 
-      }
-    });*/
-
+  async getStorage(docRef): Promise<any>{
+    try {
+      let obj = await docRef.ref.get().then(doc => {
+        return {
+          nome: doc.data()['Nome'],
+          tipo: doc.data()['Tipo'],
+          desc: doc.data()['Desc']
+          };
+        });
+      this.nome = obj.nome;
+      this.tipo = obj.tipo;
+      this.desc = obj.desc;
+    }
+    catch(e) { console.log(e) }
   }
 
 }
