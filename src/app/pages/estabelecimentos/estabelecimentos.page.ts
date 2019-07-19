@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 export class EstabelecimentosPage implements OnInit {
 
   restaurantes: any;
+  lrestaurantes: any;
   cardapio: any;
   item: object; 
  
@@ -36,7 +37,8 @@ export class EstabelecimentosPage implements OnInit {
           Capa: e.payload.doc.data()['Capa'],
         };
       })
-      console.log(this.restaurantes);
+      this.lrestaurantes = this.restaurantes
+      console.log(this.lrestaurantes);
 
     });
 /*    var storageRef = firebase.storage().ref();
@@ -45,15 +47,62 @@ export class EstabelecimentosPage implements OnInit {
       this.url = result;
       console.log(this.url)
     })*/
+
+    var slides = document.querySelector('ion-slides');
+
+    // Optional parameters to pass to the swiper instance. See http://idangero.us/swiper/api/ for valid options.
+    slides.options = {
+      slidesPerView: 3,
+      speed: 400,
+      freeMode: true,
+      width: 335,
+    }
+  }
+
+  initializeItems(): void {
+    this.restaurantes = this.lrestaurantes;
+  }
+
+  filterList(evt) {
+    this.initializeItems();
+    
+    const searchTerm = evt.srcElement.value;
+    
+    if (!searchTerm) {
+      return;
+    }
+    
+    this.restaurantes = this.lrestaurantes.filter(rest => {
+      if (rest.Nome && searchTerm) {
+        if (rest.Nome.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+          return true;
+        }
+          return false;
+      }
+    });
+  }
+
+  filterCategoria(cat) {
+    this.initializeItems();
+    
+    const searchTerm = cat;
+    console.log(searchTerm)
+    if (!searchTerm) {
+      return;
+    }
+    
+    this.restaurantes = this.lrestaurantes.filter(rest => {
+      if (rest.Tipo && searchTerm) {
+        if (rest.Tipo.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+          return true;
+        }
+          return false;
+      }
+    });
   }
 
   verCardapio(item) {
-    /*this.item = "alo";*/
     this.router.navigateByUrl('navtab/cardapio/' + item.id);
-    /*console.log(this.item);*/
-  }
-  teste(){
-    console.log("alo")
   }
 
 }

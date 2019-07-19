@@ -1,26 +1,80 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Locais Próximos</ion-title>
+    <ion-title>Restaurantes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item style="margin-bottom:10px">
-      <ion-icon name="search" item-left></ion-icon><ion-input type="search" placeholder="Prato ou Restaurante" class="pesquisa"></ion-input>
-  </ion-item>
-  <ion-item *ngFor="let item of restaurantes" (click)="verCardapio(item)" [routerLink]="['/navtab/cardapio']" class="item">
-      <ion-avatar slot="start">
-        <img src="{{item.Capa}}">
-      </ion-avatar>
-    <div class="detalhes">
-      <ion-label text-wrap class="nome">{{item.Nome}}</ion-label>
-      <ion-label text-wrap class="tipo">{{item.Tipo}}</ion-label>
-      <ion-label text-wrap class="dist">{{item.Dist}} m</ion-label>
-    </div>
-    <div style="white-space: nowrap" class="avancar">
-      <ion-icon class="icon" style="color:#eded07; margin-left:2px" name="star"></ion-icon>
-      <p style="color:#eded07">{{item.Estrelas}}</p>
-    </div>
-  </ion-item>
+  <ion-slides class="categorias">
+    <ion-slide (click) = "filterCategoria('Frutos')">
+        <ion-card>
+            <img src="../../../assets/images/Categorias/frutosdomar.png" />
+            <ion-card-header>
+              <ion-card-subtitle>Frutos do Mar</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </ion-slide>
+
+    <ion-slide (click) = "filterCategoria('Lanches')">
+        <ion-card>
+            <img src="../../../assets/images/Categorias/batata.jpg" />
+            <ion-card-header>
+              <ion-card-subtitle>Lanches</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </ion-slide>
+
+    <ion-slide (click)="filterCategoria('Petiscos')">
+        <ion-card>
+            <img src="../../../assets/images/Categorias/petiscos.png" />
+            <ion-card-header>
+              <ion-card-subtitle>Petiscos</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </ion-slide>
+    <ion-slide (click)="filterCategoria('Drinks')">
+        <ion-card>
+            <img src="../../../assets/images/Categorias/drinks.jpg" />
+            <ion-card-header>
+              <ion-card-subtitle>Drinks</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </ion-slide>
+    <ion-slide (click)="filterCategoria('Bebidas')">
+        <ion-card>
+            <img src="../../../assets/images/Categorias/Bebidas.jpg" />
+            <ion-card-header>
+              <ion-card-subtitle>Bebidas</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </ion-slide>
+    <ion-slide (click)="filterCategoria('Vegetariano')">
+        <ion-card>
+            <img src="../../../assets/images/Categorias/Vegetariano.jpg" />
+            <ion-card-header>
+              <ion-card-subtitle>Vegetariano</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Procure um Restaurante" (input)="filterList($event)"></ion-searchbar>
+  </ion-toolbar>
+  <ion-list>
+    <ion-item *ngFor="let item of restaurantes" (click)="verCardapio(item)" [routerLink]="['/navtab/cardapio']" class="item">
+        <ion-avatar slot="start">
+          <img src="{{item.Capa}}">
+        </ion-avatar>
+      <div class="detalhes">
+        <ion-label text-wrap class="nome">{{item.Nome}}</ion-label>
+        <ion-label text-wrap class="tipo">{{item.Tipo}}</ion-label>
+        <ion-label text-wrap class="dist">{{item.Dist}} m</ion-label>
+      </div>
+      <div style="white-space: nowrap" class="avancar">
+        <ion-icon class="icon" style="color:#eded07; margin-left:2px" name="star"></ion-icon>
+        <p style="color:#eded07">{{item.Estrelas}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
