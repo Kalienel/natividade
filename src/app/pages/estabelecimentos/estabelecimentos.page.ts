@@ -17,10 +17,7 @@ export class EstabelecimentosPage implements OnInit {
 
   restaurantes: any;
   cardapio: any;
-  item: object;  
-  url: any;
-  capa: any;
-;
+  item: object; 
  
   constructor(private crudService: CrudService, private router: Router) {
   }
@@ -29,7 +26,6 @@ export class EstabelecimentosPage implements OnInit {
     this.crudService.read_Restaurante().subscribe(data => {
  
       this.restaurantes = data.map(e => {
-        this.capa = e.payload.doc.data()['Capa']
         return {
           id: e.payload.doc.id,
           Estrelas: e.payload.doc.data()['Estrelas'],
@@ -53,7 +49,7 @@ export class EstabelecimentosPage implements OnInit {
 
   verCardapio(item) {
     /*this.item = "alo";*/
-    this.router.navigateByUrl('cardapio/' + item.id);
+    this.router.navigateByUrl('navtab/cardapio/' + item.id);
     /*console.log(this.item);*/
   }
   teste(){
