@@ -30,7 +30,7 @@ export class CarrinhoPage implements OnInit {
         }, {
           text: 'Sim',
           handler: () => {
-            this.navCtrl.navigateRoot('/confirmada');
+            this.navCtrl.navigateRoot('/navtab/confirmada');
             console.log('Compra realizada');
           }
         }

@@ -2,6 +2,14 @@
   <ion-toolbar>
     <ion-title>Restaurantes</ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="filterCategoria('')">
+        Limpar
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar placeholder="Procure um Restaurante" (input)="filterList($event)"></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -10,7 +18,7 @@
         <ion-card>
             <img src="../../../assets/images/Categorias/frutosdomar.png" />
             <ion-card-header>
-              <ion-card-subtitle>Frutos do Mar</ion-card-subtitle>
+              Frutos do Mar
             </ion-card-header>
         </ion-card>
     </ion-slide>
@@ -19,7 +27,7 @@
         <ion-card>
             <img src="../../../assets/images/Categorias/batata.jpg" />
             <ion-card-header>
-              <ion-card-subtitle>Lanches</ion-card-subtitle>
+              Lanches
             </ion-card-header>
         </ion-card>
     </ion-slide>
@@ -28,7 +36,7 @@
         <ion-card>
             <img src="../../../assets/images/Categorias/petiscos.png" />
             <ion-card-header>
-              <ion-card-subtitle>Petiscos</ion-card-subtitle>
+              Petiscos
             </ion-card-header>
         </ion-card>
     </ion-slide>
@@ -36,7 +44,7 @@
         <ion-card>
             <img src="../../../assets/images/Categorias/drinks.jpg" />
             <ion-card-header>
-              <ion-card-subtitle>Drinks</ion-card-subtitle>
+              Drinks
             </ion-card-header>
         </ion-card>
     </ion-slide>
@@ -44,7 +52,7 @@
         <ion-card>
             <img src="../../../assets/images/Categorias/Bebidas.jpg" />
             <ion-card-header>
-              <ion-card-subtitle>Bebidas</ion-card-subtitle>
+              Bebidas
             </ion-card-header>
         </ion-card>
     </ion-slide>
@@ -52,14 +60,12 @@
         <ion-card>
             <img src="../../../assets/images/Categorias/Vegetariano.jpg" />
             <ion-card-header>
-              <ion-card-subtitle>Vegetariano</ion-card-subtitle>
+              Vegetariano
             </ion-card-header>
         </ion-card>
     </ion-slide>
   </ion-slides>
-  <ion-toolbar>
-    <ion-searchbar placeholder="Procure um Restaurante" (input)="filterList($event)"></ion-searchbar>
-  </ion-toolbar>
+
   <ion-list>
     <ion-item *ngFor="let item of restaurantes" (click)="verCardapio(item)" [routerLink]="['/navtab/cardapio']" class="item">
         <ion-avatar slot="start">

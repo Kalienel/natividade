@@ -55,7 +55,7 @@ export class EstabelecimentosPage implements OnInit {
       slidesPerView: 3,
       speed: 400,
       freeMode: true,
-      width: 335,
+      width: 390,
     }
   }
 

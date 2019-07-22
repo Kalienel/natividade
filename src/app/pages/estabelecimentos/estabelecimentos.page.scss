@@ -7,13 +7,18 @@ ion-avatar {
 
 ion-slides.categorias ion-slide ion-card{
     width: 107.333px !important;
-    height: 125.3px !important;
+//    height: 125.3px !important;
 }
 
 ion-slides.categorias ion-slide ion-card img{
     width: 107.333px !important;
     height: 75.033px !important;
     background-color: #ce6b44;
+}
+
+ion-slides.categorias ion-slide ion-card ion-card-header{
+    padding-inline-start: 3px !important;
+    padding-inline-end: 3px !important;
 }
 
 .nome {

@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>QUIOSQUE 1</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="voltar" defaultHref="/navtab/estabelecimentos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{nome}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -32,7 +35,7 @@
   </ion-item>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button [routerLink]="['/carrinho']">
+      <ion-fab-button [routerLink]="['/navtab/carrinho']">
         <ion-icon name="cart"></ion-icon>
       </ion-fab-button>
     </ion-fab>
